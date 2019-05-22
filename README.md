@@ -2,7 +2,7 @@ Penganalan_Pola_Motor metode K-Nearest Neighbor fitur integral proyeksi dari tep
 
 menggunakan octave dengan tambahan package io & image
 
-pkg intall -forge (package)
+pkg install -forge (package)
 pkg load (package)
 
 lalu jalankan gui.m
