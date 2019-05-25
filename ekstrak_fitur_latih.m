@@ -33,12 +33,15 @@ function ekstrak_fitur_latih(object_handle,event,pathImgLatih,namafile_h,input_l
     
     if (isrgb(latihImg))
       imgCanny = rgb2gray(latihImg);
-      imgCanny = edge(imgCanny,"canny");
+      #imgCanny = edge(imgCanny,"canny");
+      imgCanny = deteksiCitra(imgCanny);
     elseif (isgray(latihImg))
-      imgCanny = edge(latihImg,"canny");     
+      #imgCanny = edge(latihImg,"canny");     
+      imgCanny = deteksiCitra(imgCanny);
     elseif (isbw(latihImg))
       imgCanny = uint8(255 * latihImg);
-      imgCanny = edge(imgCanny,"canny");
+      #imgCanny = edge(imgCanny,"canny");
+      imgCanny = deteksiCitra(imgCanny);
     endif
     imgCanny = imresize(imgCanny,[100 200]);
     imwrite(imgCanny,strcat(dirProcessedFolder,new_namafile_h));

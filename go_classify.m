@@ -9,12 +9,15 @@ function go_classify(object_handle,event,pathImgUji,namafile_uji_h)
     ujiImg = imread(path_img);
     if (isrgb(ujiImg))
       imgCanny = rgb2gray(ujiImg);
-      imgCanny = edge(imgCanny,"canny");
+      #imgCanny = edge(imgCanny,"canny");
+      imgCanny = deteksiCitra(imgCanny);
     elseif (isgray(ujiImg))
-      imgCanny = edge(ujiImg,"canny");     
+      #imgCanny = edge(ujiImg,"canny");     
+      imgCanny = deteksiCitra(imgCanny);
     elseif (isbw(ujiImg))
       imgCanny = uint8(255 * ujiImg);
-      imgCanny = edge(imgCanny,"canny");
+      #imgCanny = edge(imgCanny,"canny");
+      imgCanny = deteksiCitra(imgCanny);
     endif
     imgCanny = imresize(imgCanny,[100 200]);
     
